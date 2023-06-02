@@ -1,3 +1,3 @@
-module github.com/cedricjoulain/lisptick/blosc2
+module github.com/kereon-intelligence/go-blosc2
 
 go 1.20
