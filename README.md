@@ -4,9 +4,10 @@ golang (cgo) wrapper for [blosc2](https://github.com/Blosc/c-blosc2)
 
 *a high performance compressor optimized for binary data*
 
-Includes and libraries must be installed/compiled from [here](https://github.com/Blosc/c-blosc2).
+As of today (5th june 2023), no debian libblosc2-dev package is available (there is a libblosc1-dev).
+Here in the full install process (can be seen [here](https://github.com/Blosc/c-blosc2) and [here](https://linuxhint.com/install-cmake-on-debian/#2) for cmake)
 
-## Debian c-blocs2 installation
+## Debian c-blosc2 installation
 
 ### First install cmake > 3.16
 
