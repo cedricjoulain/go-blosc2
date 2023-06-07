@@ -2,7 +2,7 @@
 package blosc2
 
 /*
-#cgo LDFLAGS: -lpthread /usr/local/lib/libblosc2.a -ldl -lm
+#cgo LDFLAGS: -lpthread -l:libblosc2.a -ldl -lm
 #include "blosc2_include.h"
 */
 import "C"
