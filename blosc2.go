@@ -1,7 +1,6 @@
 // Package blosc2 wraps blosc2 for compressing numbers.
 package blosc2
 
-// to use shared library instead: #cgo LDFLAGS: -lpthread -lblosc2
 /*
 #cgo LDFLAGS: -lpthread /usr/local/lib/libblosc2.a -ldl -lm
 #include "blosc2_include.h"
@@ -11,6 +10,8 @@ import (
 	"reflect"
 	"unsafe"
 )
+
+// to use shared library use LDFLAGS: -lpthread -lblosc2
 
 func init() {
 	C.blosc2_init()
