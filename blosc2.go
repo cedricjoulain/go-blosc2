@@ -2,7 +2,8 @@
 package blosc2
 
 /*
-#cgo LDFLAGS: -lpthread -l:libblosc2.a -ldl -lm
+#cgo linux LDFLAGS: -lpthread -l:libblosc2.a -ldl -lm
+#cgo darwin LDFLAGS: -lpthread -lblosc2
 #include "blosc2_include.h"
 */
 import "C"
@@ -11,7 +12,7 @@ import (
 	"unsafe"
 )
 
-// to use shared library use LDFLAGS: -lpthread -lblosc2
+// static link issue with shared library on linux (LDFLAGS: -lpthread -lblosc2)
 
 func init() {
 	C.blosc2_init()
@@ -19,7 +20,6 @@ func init() {
 
 // Compress takes a slice of numbers and compresses according to level and shuffle.
 func Compress(level int, shuffle bool, slice interface{}) []byte {
-
 	rv := reflect.ValueOf(slice)
 	if rv.Kind() != reflect.Slice {
 		panic("blosc: expected slice to Compress")
