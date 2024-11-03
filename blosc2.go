@@ -44,8 +44,6 @@ func Compress(level int, shuffle bool, slice interface{}) []byte {
 
 type typed []byte
 
-const maxSize = 1<<36 - 1
-
 func (c typed) Uint16s() []uint16 {
 	n := len(c) / int(unsafe.Sizeof(uint16(0)))
 	return (*[maxSize]uint16)(unsafe.Pointer(&c[0]))[:n]
